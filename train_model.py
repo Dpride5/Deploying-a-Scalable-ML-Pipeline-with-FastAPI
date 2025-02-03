@@ -95,5 +95,4 @@ for col in cat_features:
 
         except TypeError as e:
             print(f"Ignoring TypeError:{e}")
-
             continue
