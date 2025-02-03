@@ -52,7 +52,7 @@ X_test, y_test, _, _ = process_data(
 )
 
 # TODO: use the train_model function to train the model on the training dataset
-model = None # your code here
+model = train_model(X_train, y_train)
 
 # save the model and the encoder
 model_path = os.path.join(project_path, "model", "model.pkl")
@@ -66,7 +66,7 @@ model = load_model(
 ) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
-preds = None # your code here
+preds = inference(model,X_test)
 
 # Calculate and print the metrics
 p, r, fb = compute_model_metrics(y_test, preds)
@@ -78,10 +78,24 @@ for col in cat_features:
     # iterate through the unique values in one categorical feature
     for slicevalue in sorted(test[col].unique()):
         count = test[test[col] == slicevalue].shape[0]
-        p, r, fb = performance_on_categorical_slice(
-            # your code here
-            # use test, col and slicevalue as part of the input
-        )
+        try:
+            p, r, fb = performance_on_categorical_slice(
+                test,
+                col,
+                slicevalue,
+                cat_features,
+                "salary",
+                encoder,
+                lb,
+                model,
+
+            )
         with open("slice_output.txt", "a") as f:
             print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+            print(f"Precision: {p:.4f} | Re
+            call: {r:.4f} | F1: {fb:.4f}", file=f)
+
+        except TypeError as e:
+            print(f"Ignoring TypeError:{e}")
+
+            contineu
