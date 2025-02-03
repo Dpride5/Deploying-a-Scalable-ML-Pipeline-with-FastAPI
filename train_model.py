@@ -89,9 +89,9 @@ for col in cat_features:
                 lb,
                 model,
             )
-        with open("slice_output.txt", "a") as f:
-            print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+            with open("slice_output.txt", "a") as f:
+                print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
+                print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f,)
 
         except TypeError as e:
             print(f"Ignoring TypeError:{e}")
