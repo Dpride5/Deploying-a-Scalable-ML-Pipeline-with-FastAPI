@@ -1,6 +1,6 @@
 import pytest
 import numpy as pd
-from ml.data improt process_data
+from ml.data import process_data
 from ml.model import (
     compute_model_metrics,
     train_model,
