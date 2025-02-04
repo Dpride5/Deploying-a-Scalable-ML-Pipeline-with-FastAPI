@@ -23,8 +23,16 @@ This dataset was split for one portion to be used for testing and the other port
 
 ## Metrics
 _Please include the metrics used and your model's performance on those metrics._
-This model's performance was evaluated on three metrics that highlight a balanced insight in machine learning 
+This model's performance was evaluated on three metrics that highlight a balanced insight into machine learning effectiveness. Precision measures the accuracy of positive predictions, while Recall evaluates the model's ability to capture all true positive instances, reducing false negatives. The F1-Score harmonizes these two metrics, providing a holistic measure of performance. 
+
+Model's Performance: Precision: 0.7872 | Recall: 0.1965 | F1: 0.3145
 
 ## Ethical Considerations
+Transparency: The model uses Logistic Regression, which is a transparent and interpretable model. Users can see and understand the factors that contribute to predictions.
+
+Privacy: The model uses personal data for prediction. This has been cleared because all personal data has been anonymized and publicly available.
+
+Fairness/Bias: The model may exhibit bias if the training data contains biases in its attributes. 
 
 ## Caveats and Recommendations
+The model's low recall suggests it struggles to identify a significant portion of individuals earning over $50,000 annually. To improve fairness and accuracy, address potential biases in training data, update the model regularly to reflect evolving societal and economic trends, and implement ongoing performance monitoring to get more reliable outcomes.
